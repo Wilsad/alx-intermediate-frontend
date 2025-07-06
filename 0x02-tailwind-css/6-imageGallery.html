@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid and Flexbox Layout with Image Gallery</title>
+    <!-- Link to the generated Tailwind CSS output file -->
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for responsive behavior on smaller screens */
+        @media (max-width: 768px) {
+            main {
+                /* On small screens, main grid will be a single column */
+                grid-template-columns: 1fr;
+            }
+            /* Ensure flex items in section stack on small screens */
+            section.flex {
+                flex-direction: column;
+            }
+            /* Reset width for stacked flex items and add vertical spacing */
+            section.flex div {
+                width: 100%; /* Occupy full width when stacked */
+                margin-bottom: 1rem; /* Add vertical margin */
+            }
+            /* Add vertical margin for aside when main stacks */
+            main aside {
+                margin-top: 1rem; /* Add vertical margin below section */
+            }
+            /* Image gallery on small screens: 1 image per row */
+            .image-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 bg-gray-50 min-h-screen">
+    <!-- Header section for the page title -->
+    <header class="bg-blue-500 text-white p-4 rounded-lg shadow-md mb-6">
+        <h1 class="text-3xl font-bold text-center">Grid and Flexbox Layout with Image Gallery</h1>
+    </header>
+
+    <!-- Main content area, structured as a responsive grid layout -->
+    <!-- Default 1 column on small screens, 3 columns on large screens -->
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 min-h-screen">
+        <!-- Section: spans 2 columns on large screens and uses flexbox for its children -->
+        <section class="lg:col-span-2 flex flex-col lg:flex-row gap-4 p-4 bg-gray-100 rounded-lg shadow-md">
+            <!-- Flexbox Item 1: half width on large screens, full width on small -->
+            <div class="p-4 bg-red-200 w-full lg:w-1/2 rounded-lg shadow-sm text-gray-800 font-semibold text-center">Flexbox Item 1</div>
+            <!-- Flexbox Item 2: half width on large screens, full width on small -->
+            <div class="p-4 bg-red-400 w-full lg:w-1/2 rounded-lg shadow-sm text-white font-semibold text-center">Flexbox Item 2</div>
+        </section>
+
+        <!-- Sidebar: occupies remaining grid column -->
+        <aside class="bg-green-200 p-4 rounded-lg shadow-md text-gray-800 font-semibold text-center">Sidebar</aside>
+    </main>
+
+    <!-- New Section for Image Gallery -->
+    <section class="mt-8 p-4 bg-white rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Image Gallery</h2>
+        <!-- Image gallery grid: 3 columns on medium/large screens, 1 column on small -->
+        <div class="image-gallery-grid grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Image 1 -->
+            <div class="rounded-lg overflow-hidden shadow-md">
+                <img src="https://placehold.co/600x400/FF5733/FFFFFF?text=Image+1" alt="Placeholder Image 1" class="w-full h-auto object-cover">
+            </div>
+            <!-- Image 2 -->
+            <div class="rounded-lg overflow-hidden shadow-md">
+                <img src="https://placehold.co/600x400/33FF57/FFFFFF?text=Image+2" alt="Placeholder Image 2" class="w-full h-auto object-cover">
+            </div>
+            <!-- Image 3 -->
+            <div class="rounded-lg overflow-hidden shadow-md">
+                <img src="https://placehold.co/600x400/3357FF/FFFFFF?text=Image+3" alt="Placeholder Image 3" class="w-full h-auto object-cover">
+            </div>
+            <!-- Image 4 -->
+            <div class="rounded-lg overflow-hidden shadow-md">
+                <img src="https://placehold.co/600x400/FF33A1/FFFFFF?text=Image+4" alt="Placeholder Image 4" class="w-full h-auto object-cover">
+            </div>
+            <!-- Image 5 -->
+            <div class="rounded-lg overflow-hidden shadow-md">
+                <img src="https://placehold.co/600x400/A133FF/FFFFFF?text=Image+5" alt="Placeholder Image 5" class="w-full h-auto object-cover">
+            </div>
+            <!-- Image 6 -->
+            <div class="rounded-lg overflow-hidden shadow-md">
+                <img src="https://placehold.co/600x400/57FF33/FFFFFF?text=Image+6" alt="Placeholder Image 6" class="w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="bg-gray-800 text-white p-4 mt-4 rounded-lg shadow-md text-center">
+        <p>&copy; 2024 John Doe's Blog</p>
+    </footer>
+</body>
+</html>
