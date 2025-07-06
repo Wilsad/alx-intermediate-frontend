@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid and Flexbox Layout</title>
+    <!-- Link to the generated Tailwind CSS output file -->
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for responsive behavior on smaller screens */
+        @media (max-width: 768px) {
+            main {
+                /* On small screens, main grid will be a single column */
+                grid-template-columns: 1fr;
+            }
+            /* Ensure flex items in section stack on small screens */
+            section.flex {
+                flex-direction: column;
+            }
+            /* Reset width for stacked flex items and add vertical spacing */
+            section.flex div {
+                width: 100%; /* Occupy full width when stacked */
+                margin-bottom: 1rem; /* Add vertical margin */
+            }
+            /* Add vertical margin for aside when main stacks */
+            main aside {
+                margin-top: 1rem; /* Add vertical margin below section */
+            }
+        }
+    </style>
+</head>
+<body class="p-4 bg-gray-50 min-h-screen">
+    <!-- Header section for the page title -->
+    <header class="bg-blue-500 text-white p-4 rounded-lg shadow-md mb-6">
+        <h1 class="text-3xl font-bold text-center">Grid and Flexbox Layout</h1>
+    </header>
+
+    <!-- Main content area, structured as a responsive grid layout -->
+    <!-- Default 1 column on small screens, 3 columns on large screens -->
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 min-h-screen">
+        <!-- Section: spans 2 columns on large screens and uses flexbox for its children -->
+        <section class="lg:col-span-2 flex flex-col lg:flex-row gap-4 p-4 bg-gray-100 rounded-lg shadow-md">
+            <!-- Flexbox Item 1: half width on large screens, full width on small -->
+            <div class="p-4 bg-red-200 w-full lg:w-1/2 rounded-lg shadow-sm text-gray-800 font-semibold text-center">Flexbox Item 1</div>
+            <!-- Flexbox Item 2: half width on large screens, full width on small -->
+            <div class="p-4 bg-red-400 w-full lg:w-1/2 rounded-lg shadow-sm text-white font-semibold text-center">Flexbox Item 2</div>
+        </section>
+
+        <!-- Sidebar: occupies remaining grid column -->
+        <aside class="bg-green-200 p-4 rounded-lg shadow-md text-gray-800 font-semibold text-center">Sidebar</aside>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="bg-gray-800 text-white p-4 mt-4 rounded-lg shadow-md text-center">
+        <p>&copy; 2024 John Doe's Blog</p>
+    </footer>
+</body>
+</html>
