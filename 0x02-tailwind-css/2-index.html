@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Grid Layout</title>
+    <!-- Link to the generated Tailwind CSS output file -->
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="p-4">
+    <!-- Header section with a main title -->
+    <header class="mb-6 text-center">
+        <h1 class="text-4xl font-bold text-gray-800">Complex Grid Layout with Nested Grids</h1>
+    </header>
+
+    <!-- Main content area, structured as a 2x2 grid -->
+    <main class="grid grid-cols-2 gap-4">
+        <!-- First main grid cell, containing a nested blue grid -->
+        <div class="grid grid-cols-2 p-4 gap-2 bg-blue-200 rounded-lg shadow-md">
+            <!-- Nested grid item 1 -->
+            <div class="bg-blue-400 p-2 rounded-md text-white font-semibold text-center">Nested 1</div>
+            <!-- Nested grid item 2 -->
+            <div class="bg-blue-500 p-2 rounded-md text-white font-semibold text-center">Nested 2</div>
+        </div>
+
+        <!-- Second main grid cell, containing a nested red grid -->
+        <div class="grid grid-cols-2 p-4 gap-2 bg-red-200 rounded-lg shadow-md">
+            <!-- Nested grid item 3 -->
+            <div class="bg-red-400 p-2 rounded-md text-white font-semibold text-center">Nested 3</div>
+            <!-- Nested grid item 4 -->
+            <div class="bg-red-500 p-2 rounded-md text-white font-semibold text-center">Nested 4</div>
+        </div>
+
+        <!-- Third main grid cell, simple content with green background -->
+        <div class="bg-green-200 p-4 rounded-lg shadow-md text-gray-700 font-medium text-center">Content 3</div>
+
+        <!-- Fourth main grid cell, simple content with yellow background -->
+        <div class="bg-yellow-200 p-4 rounded-lg shadow-md text-gray-700 font-medium text-center">Content 4</div>
+    </main>
+</body>
+</html>
