@@ -1,0 +1,16 @@
+@mixin horizontal-margins($value) {
+  margin-left: $value;  // Sets the left margin
+  margin-right: $value; // Sets the right margin
+}
+
+body {
+  // Include the 'horizontal-margins' mixin and pass '10px' as the value.
+  // This will set margin-left: 10px; and margin-right: 10px; for the body.
+  @include horizontal-margins(10px);
+}
+
+div {
+  // Include the 'horizontal-margins' mixin and pass '15px' as the value.
+  // This will set margin-left: 15px; and margin-right: 15px; for the div.
+  @include horizontal-margins(15px);
+}
