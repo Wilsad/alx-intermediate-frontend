@@ -1,0 +1,20 @@
+## SASS INSTALLATION SETUP
+1. ### Initial Installation Attempt  
+   Installed Sass using a specific version:  
+   
+   npm install sass -v 3.7.4
+    
+2. ### Version Check 
+   Tried checking the installed Sass version:  
+   
+   sass --version
+    
+   This threw an error because the `sass` command wasn’t recognized—likely due to Sass being installed locally and not added to system PATH.
+
+3. ### Resolved with Global Installation**  
+   Reinstalled Sass globally to make the CLI accessible system-wide:  
+
+   npm install -g sass@latest
+
+   After this, Sass worked as expected, and `sass --version` returned the correct output.
+
